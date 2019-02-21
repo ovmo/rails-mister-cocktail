@@ -1,0 +1,6 @@
+<%= simple_form_for([cocktail, dose]) do |f| %>
+    <%= f.input :description, placeholder: "4cl" %>
+    <%= hidden_field_tag :cocktail, params[:id] %>
+    <%= f.association :ingredient, collection: Ingredient.all.order(:name), prompt: "Choose an ingredient" %>
+    <%= f.submit %>
+<% end %>

@@ -1,0 +1,18 @@
+<h2>This is <%= @cocktail.name %></h2>
+
+
+
+<p>To create <%= @cocktail.name %> you will need:</p>
+
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+    <li>
+      <%= dose.description %> of <%= dose.ingredient.name %> | <%= link_to "🤢", dose_path(dose), method: :delete %>
+    </li>
+  <% end %>
+</ul>
+
+
+<%= render 'doses/form', cocktail: @cocktail, dose: @dose %>
+
+
