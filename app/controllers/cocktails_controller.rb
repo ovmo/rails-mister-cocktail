@@ -2,7 +2,6 @@ class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
     @cocktail = Cocktail.new
-    navbar_create
   end
 
   def show
@@ -27,9 +26,5 @@ class CocktailsController < ApplicationController
 
   def cocktail_params
     params.require(:cocktail).permit(:name, :photo)
-  end
-
-  def navbar_create
-
   end
 end
