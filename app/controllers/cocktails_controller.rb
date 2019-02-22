@@ -1,6 +1,8 @@
 class CocktailsController < ApplicationController
   def index
     @cocktails = Cocktail.all
+    @cocktail = Cocktail.new
+    navbar_create
   end
 
   def show
@@ -17,13 +19,17 @@ class CocktailsController < ApplicationController
     if @cocktail.save
       redirect_to cocktail_path(@cocktail)
     else
-      render :new
+      redirect_to cocktails_path
     end
   end
 
   private
 
   def cocktail_params
-    params.require(:cocktail).permit(:name)
+    params.require(:cocktail).permit(:name, :photo)
+  end
+
+  def navbar_create
+
   end
 end

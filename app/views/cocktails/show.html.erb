@@ -4,13 +4,20 @@
 
 <p>To create <%= @cocktail.name %> you will need:</p>
 
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li>
-      <%= dose.description %> of <%= dose.ingredient.name %> | <%= link_to "🤢", dose_path(dose), method: :delete %>
-    </li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="col-6">
+    <%= image_tag @cocktail.photo, class: 'img-fluid' %>
+  </div>
+  <div class="col-6">
+    <% @cocktail.doses.each do |dose| %>
+      <div class="col-12">
+        <div class="pl-4">
+        → <%= dose.description %> of <%= dose.ingredient.name %>   <%= link_to "濫", dose_path(dose), method: :delete, class: "btn btn-warning" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 
 <%= render 'doses/form', cocktail: @cocktail, dose: @dose %>

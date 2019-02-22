@@ -1,6 +1,4 @@
 <h1>these are all the available Cocktails</h1>
-
-<%= link_to "Create a new Drink", new_cocktail_path %>
 <ul>
 <% @cocktails.each do |cocktail| %>
   <li>
@@ -8,3 +6,6 @@
   </li>
 <% end %>
 </ul>
+
+
+<%= render 'form', cocktail: @cocktail %>

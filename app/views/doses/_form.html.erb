@@ -1,6 +1,14 @@
 <%= simple_form_for([cocktail, dose]) do |f| %>
-    <%= f.input :description, placeholder: "4cl" %>
-    <%= hidden_field_tag :cocktail, params[:id] %>
-    <%= f.association :ingredient, collection: Ingredient.all.order(:name), prompt: "Choose an ingredient" %>
-    <%= f.submit %>
+<%= hidden_field_tag :cocktail, params[:id] %>
+<div class="form-row">
+  <div class="col-12 col-md-6">
+    <%= f.input :description, placeholder: "4cl", class: 'form-control' %>
+  </div>
+  <div class="col-12 col-md-6">
+    <%= f.association :ingredient, collection: Ingredient.all.order(:name), prompt: "Choose an ingredient", class: 'form-control' %>
+  </div>
+</div>
+<div class="form-row">
+  <%= f.submit "Add a new Ingredient", class: "btn btn-outline-success mx-auto" %>
+</div>
 <% end %>

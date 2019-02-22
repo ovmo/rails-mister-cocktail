@@ -1,0 +1,8 @@
+<%= simple_form_for(cocktail) do |f| %>
+  <%= f.input :name, class: 'form-control' %>
+  <%= f.input :photo, class: "form-control", placeholder: "Image URL" %>
+  <div class="form-row">
+  <%= f.submit "Add a new Ingredient", class: "btn btn-outline-success mx-auto" %>
+</div>
+<% end %>
+

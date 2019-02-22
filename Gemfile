@@ -33,10 +33,12 @@ gem 'jbuilder', '~> 2.5'
 # i
 # i
 gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.3.7'
+# gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'
-gem 'bootstrap'
+# gem 'bootstrap'
+# gem 'select2'
+# gem "pg"
 # i
 # o
 # i
